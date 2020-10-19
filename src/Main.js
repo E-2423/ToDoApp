@@ -15,7 +15,9 @@ const Main =() => {
 
                 </View>
 
-                <TodoInput/>
+                <TodoInput
+                    onTodoEnter={todoText=>alert(todoText)}
+                />
 
             </View>
         </SafeAreaView>
