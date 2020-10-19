@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {SafeAreaView, View, Text, FlatList} from 'react-native';
 
 import {main} from './styles';
-import {TodoInput} from './components';
+import {TodoCard, TodoInput} from './components';
 
 
 const Main =() => {
@@ -21,18 +21,22 @@ const Main =() => {
         console.log(newArray);
         setList(newArray);
     }
+
+    const renderTodo =({item})=><TodoCard data={item} />
+
+
     return (
         <SafeAreaView style={main.container}>
             <View  style={main.container}>
                 <View style={main.banner}>
                     <Text style={main.todoText}>TODO</Text>
-                    <Text  style={main.todoCounter}>10</Text>
+                    <Text  style={main.todoCount}>{list.length}</Text>
 
                 </View>
 
                 <FlatList
-                    data={[]}
-                    renderItem={()=>null}
+                    data={list}
+                    renderItem={renderTodo}
 
                 />
 
