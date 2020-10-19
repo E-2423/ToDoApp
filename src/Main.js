@@ -35,8 +35,11 @@ const Main =() => {
                 </View>
 
                 <FlatList
+                    keyExtractor={(item, index)=> index.toString()}
                     data={list}
                     renderItem={renderTodo}
+                    ListEmptyComponent={()=><Text>Nothing to do...</Text>}
+                    
 
                 />
 
