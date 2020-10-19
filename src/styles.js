@@ -20,10 +20,14 @@ const main = StyleSheet.create({
         color:'#ff9b31'
 
     },
-    todoCounter:{
+    todoCount:{
         fontSize:35,
         color:'#ff9b31'
 
+    },
+    emptyComponet:{
+        color:'white',
+        textAlign:'center'
     }
 })
 const todo_input = StyleSheet.create({

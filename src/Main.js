@@ -38,7 +38,7 @@ const Main =() => {
                     keyExtractor={(item, index)=> index.toString()}
                     data={list}
                     renderItem={renderTodo}
-                    ListEmptyComponent={()=><Text>Nothing to do...</Text>}
+                    ListEmptyComponent={()=><Text style={main.emptyComponet}>Nothing to do...</Text>}
                     
 
                 />
