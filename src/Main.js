@@ -28,13 +28,22 @@ const Main =() => {
         setList(newArray);
     }
 
-    
+    function removeTodo(todoId) {
+        const newArray = [...list];
+        const todoIndex = list.findIndex(t => t.id == todoId);
+
+        newArray.splice(todoIndex, 1);
+        setList(newArray);
+    }
+
+
 
     const renderTodo =({item})=>{
         return(
             <TodoCard
                 data={item}
                 onDone={()=>doneTodo(item.id)}
+                onRemove={() =>removeTodo(item.id)}
             />
         )
     }
@@ -45,7 +54,7 @@ const Main =() => {
             <View  style={main.container}>
                 <View style={main.banner}>
                     <Text style={main.todoText}>TODO</Text>
-                    <Text  style={main.todoCount}>{list.length}</Text>
+                    <Text  style={main.todoCount}>{list.filter(t=>t.isDone ===false).length}</Text>
 
                 </View>
 

@@ -8,7 +8,7 @@ const TodoCard = (props) =>{
         <TouchableOpacity
             style={todo_card.container}
             onPress={()=>props.onDone()}
-            // onLongPress={() => props.onRemove()}
+            onLongPress={() => props.onRemove()}
         
         >
             <Text style={[
